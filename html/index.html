@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+ul {
+    display: inline-flex;
+}
+
+ul li {
+    list-style-type: none;
+    font-size: 56px;
+    border: 1px dashed red;
+    padding: 15px;
+}
+
+ul li a {
+    background-color: yellow;
+    text-decoration: none;
+}
+
+
+    </style>
+
+  <!--  <link rel="stylesheet" href="../css/styles.css">-->
+</head>
+<body>
+
+<div id="myDiv">
+
+    Hello, myDiv
+</div>
+
+<ul>
+    <li><a href="seond.html" target="_blank">Second Page</a></li>
+    <li><a href="seond.html" target="_blank">THird Page</a></li>
+    <li><a href="seond.html" target="_blank">Fourth Page</a></li>
+
+
+</ul>
+
+<form>
+
+    <input type="button" value="enter" onclick="sayHi()">
+    <button value="click">Click me, my dear!</button>
+     <input type="text" placeholder="Enter some data...">
+    <input type="radio" value="enter">
+
+</form>
+<input type="button" value="Remove" onclick="removeEl()">
+
+<form action="" method="post">
+    <input type="radio" value="value 1" name="radio">Option 1
+    <input type="radio" value="value 2" name="radio">Option 2
+    <input type="radio" value="value 3" name="radio">Option 3
+    <input type="radio" value="value 4" name="radio">Option 4
+    <input type="radio" value="value 5" name="radio">Option 5
+
+
+    <input type="button" value="Click me!" onclick="display()">
+
+</form>
+
+<br>
+<br>
+
+<table border="1" id="first">
+
+    <tr>
+        <td rowspan="2">1</td>
+        <td>2</td>
+        <td></td>
+    </tr>
+    <tr>
+
+        <td>5</td>
+        <td>6</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>9</td>
+
+    </tr>
+    <tr>
+        <td colspan="2">7</td>
+         <td>8</td>
+
+    </tr>
+</table>
+
+<script>
+
+
+    const display = () =>{
+    const el = document.getElementsByName('radio');
+     for(let i=0; i<el.length;i++){
+         //console.log(el[i].value)
+         if(el[i].checked){
+             document.write(el[i].value);
+         }
+
+     }
+
+
+    //console.log(el[0].value);
+    }
+function  sayHi(){
+    //alert("Hi");
+    const pDiv = document.getElementById('myDiv');
+    const cEl = document.createElement('h1');
+
+    cEl.style.backgroundColor = 'red';
+    cEl.setAttribute('id', "myHeader");
+    cEl.innerHTML = "Hello from the child element";
+     pDiv.append(cEl);
+}
+
+function removeEl(){
+    pEl = document.getElementById('myDiv');
+    cEl = document.getElementById('h1');
+    pEl.remove();
+    pEl.removeChild();
+}
+
+</script>
+</body>
+</html>
